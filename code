@@ -1,0 +1,49 @@
+# Exemplo de complexidade O(1) - tempo constante
+def primeiro_elemento(lista):
+    """
+    Retorna o primeiro elemento da lista (ou None se vazia).
+    Lógica: acesso direto por índice.
+    Complexidade: O(1) - operação constante, independente do tamanho da lista.
+    """
+    return lista[0] if lista else None
+
+
+# Exemplo de complexidade O(n) - tempo linear
+def soma_elementos(lista):
+    """
+    Soma todos os elementos da lista.
+    Lógica: percorre cada elemento uma vez e acumula a soma.
+    Complexidade: O(n) - o tempo cresce linearmente com o número de elementos.
+    """
+    total = 0
+    for x in lista:
+        total += x
+    return total
+
+
+# Exemplo de complexidade O(n^2) - tempo quadrático
+def imprime_pares(lista):
+    """
+    Imprime todas as combinações de pares (i, j) da lista.
+    Lógica: dois laços aninhados que percorrem a lista para cada elemento.
+    Complexidade: O(n^2) - para cada um dos n elementos, fazemos outro laço sobre n elementos.
+    """
+    for i in lista:
+        for j in lista:
+            print(i, j)
+
+
+# Demonstração simples
+if __name__ == "__main__":
+    dados = [1, 2, 3, 4]
+
+    print("O(1) -> primeiro elemento:", primeiro_elemento(dados))
+    print("O(n) -> soma dos elementos:", soma_elementos(dados))
+    print("O(n^2) -> pares (mostrando primeiro 10 pares):")
+    # para evitar muita saída, mostramos só os 10 primeiros pares
+    contador = 0
+    for i in dados:
+        for j in dados:
+            if contador < 10:
+                print(i, j)
+            contador += 1
